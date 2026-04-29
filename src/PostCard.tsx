@@ -12,11 +12,11 @@ export default function PostCard({ title, content, Truerating = 0, rating = 0}: 
   const [currentRating, setCurrentRating] = useState(rating);
   
   const upvote = () => {
-    setCurrentRating(rating => Truerating + 1);
+    setCurrentRating(() => Truerating + 1);
   };
 
   const downvote = () => {
-    setCurrentRating(rating => Truerating - 1);
+    setCurrentRating(() => Truerating - 1);
   };
   return (
     <div className="card mb-3">

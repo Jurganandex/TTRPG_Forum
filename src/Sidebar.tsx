@@ -1,4 +1,13 @@
-export default function Sidebar() {
+import PostButton from './PostButton'; 
+
+type SidebarProps = {
+  setPosts: React.Dispatch<
+    React.SetStateAction<{ title: string; content: string }[]>
+  >;
+};
+
+export default function Sidebar({ setPosts }: SidebarProps) {
+
   return (
     <div>
       <div className="card mb-3">
@@ -18,6 +27,9 @@ export default function Sidebar() {
             <li className="list-group-item">Backstory</li>
           </ul>
         </div>
+      </div>
+      <div>
+        <PostButton setPosts={setPosts}/>
       </div>
     </div>
   );
